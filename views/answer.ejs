@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="answer.css">
+</head>
+<body>
+    <header>
+        <div class="appname" id="appname">
+          <h1>ABC Planner</h1>
+        </div>
+  
+        <div class="nav-links">
+          <ul>
+            <li><a href="/hotel"> Hotels </a></li>
+            <li><a href="/tourism"> Tourism </a></li>
+            <li><a href="/restaurant"> Restaurant </a></li>
+            <li><a href="/entertainment"> Entertainment </a></li>
+            <li><a href="/"> Back to Home </a></li>
+          </ul>
+        </div>
+    </header>
+    <div>
+        <% if(locals.data){ %>
+            <%locals.data.forEach(ele =>{%>
+                <p><i class="fa-solid fa-location-dot"></i> <%=ele%></p>
+                <%})}%>
+    </div>
+    
+    
+
+</body>
+</html>
