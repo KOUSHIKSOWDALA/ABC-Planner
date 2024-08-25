@@ -19,7 +19,7 @@ let format = {}
 app.post('/submit', async(req,resp) =>{
     const destination = req.body.destination;
     const URl = await axios.get(
-        `https://api.geoapify.com/v1/geocode/search?city=${destination}&apiKey=e8f42355dd8e48c4879a459d4f8148cd`
+        `https://api.geoapify.com/v1/geocode/search?city=${destination}&apiKey=YOURAPIKEY`
     )
     const lat = URl.data.features[0].properties.lat;
     const lon = URl.data.features[0].properties.lon;
@@ -27,7 +27,7 @@ app.post('/submit', async(req,resp) =>{
     const limit = req.body.limit;
 
     const URL2 = await axios.get(
-        `https://api.geoapify.com/v2/places?categories=accommodation.hotel&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=e8f42355dd8e48c4879a459d4f8148cd`
+        `https://api.geoapify.com/v2/places?categories=accommodation.hotel&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=YOURAPIKEY`
     )
     const hotels = []
     URL2.data.features.forEach(element => {
@@ -36,7 +36,7 @@ app.post('/submit', async(req,resp) =>{
     format.hotel = hotels
 
     const URL3 = await axios.get(
-        `https://api.geoapify.com/v2/places?categories=tourism&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=e8f42355dd8e48c4879a459d4f8148cd`
+        `https://api.geoapify.com/v2/places?categories=tourism&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=YOURAPIKEY`
     )
     const tourism = []
     URL3.data.features.forEach(element => {
@@ -45,7 +45,7 @@ app.post('/submit', async(req,resp) =>{
     format.tourism = tourism
     
     const URL4 = await axios.get(
-        `https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=e8f42355dd8e48c4879a459d4f8148cd`
+        `https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=YOURAPIKEY`
     )
 
     const restaurants = []
@@ -56,7 +56,7 @@ app.post('/submit', async(req,resp) =>{
     format.restaurants = restaurants
 
     const URL5 = await axios.get(
-        `https://api.geoapify.com/v2/places?categories=entertainment&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=e8f42355dd8e48c4879a459d4f8148cd`
+        `https://api.geoapify.com/v2/places?categories=entertainment&filter=circle:${lon},${lat},${rad}&limit=${limit}&apiKey=YOURAPIKEY`
     )
 
     const entertainment = []
