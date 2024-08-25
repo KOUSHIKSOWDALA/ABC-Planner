@@ -87,9 +87,6 @@ app.get('/entertainment',(req,res) => {
 })
 
 
-
-
-
 app.listen(port, () => {
     console.log("Server is Running")
 })
