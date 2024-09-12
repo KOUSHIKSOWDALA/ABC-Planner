@@ -36,11 +36,16 @@
     <div>
         <% if(locals.data){ %>
             <%locals.data.forEach(ele =>{%>
-                <p><i class="fa-solid fa-location-dot"></i> <%=ele%></p>
+                <p onclick="openSearchURL('<%=ele%>')"><i class="fa-solid fa-location-dot"></i> <%=ele%></p>
                 <%})}%>
     </div>
     
-    
+    <script>
+      function openSearchURL(text) {
+        const searchURL = `https://www.google.com/search?q=${encodeURIComponent(text)}`;
+        window.open(searchURL, '_blank');
+      }
+    </script>
 
 </body>
 </html>
